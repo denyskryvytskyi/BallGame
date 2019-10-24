@@ -1,2 +1,2 @@
 # BallGame
-Simple 3d ball game
+Simple 3d ball game in Unity
