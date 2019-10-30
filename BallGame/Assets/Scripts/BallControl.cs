@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class BallControl : MonoBehaviour {
+public class BallControl : MonoBehaviour
+{
 
     public Rigidbody ballRB;
 
@@ -12,15 +13,15 @@ public class BallControl : MonoBehaviour {
     private void Start()
     {
         // Getting the distance from the center to the ground.
-        distToGround = GetComponent<Collider>().bounds.extents.y;    
+        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
-    void FixedUpdate () {
-        float rotation = rotationSpeed;
+    void FixedUpdate()
+    {
+        float rotation = rotationSpeed * Time.deltaTime;
 
-        rotation *= Time.deltaTime;
-
-        if (isFalling == false) {
+        if (isFalling == false)
+        {
             if (Input.GetKey("w"))
             {
                 ballRB.AddForce(Vector3.forward * rotation);
@@ -38,7 +39,7 @@ public class BallControl : MonoBehaviour {
                 ballRB.AddForce(Vector3.right * rotation);
             }
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             isFalling = true;

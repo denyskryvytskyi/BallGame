@@ -2,13 +2,15 @@
 using UnityEngine.Audio;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     public Sound[] sounds;
 
     public static AudioManager instance;
 
-	void Awake () {
+    void Awake()
+    {
 
         if (instance == null)
             instance = this;
@@ -25,21 +27,22 @@ public class AudioManager : MonoBehaviour {
             s.audioSource.pitch = s.pitch;
             s.audioSource.loop = s.loop;
         }
-	}
+    }
 
     private void Start()
     {
         Play("Theme");
     }
 
-    public void Play (string name) {
+    public void Play(string name)
+    {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if(s == null)
+        if (s == null)
         {
             Debug.Log("Sound: " + name + " not found!");
             return;
         }
-            
+
         s.audioSource.Play();
-	}
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class GameMaster : MonoBehaviour {
+public class GameMaster : MonoBehaviour
+{
 
     public static int currentScore = 0;
 
@@ -15,6 +16,6 @@ public class GameMaster : MonoBehaviour {
 
     private void OnGUI()
     {
-        GUI.Box(new Rect(Screen.width/2-sizeX/2, offsetY, sizeX, sizeY), "Score: " + currentScore);
+        GUI.Box(new Rect(Screen.width / 2 - sizeX / 2, offsetY, sizeX, sizeY), "Score: " + currentScore);
     }
 }
